@@ -5,14 +5,14 @@ import "./App.css";
 
 //components
 import Homepage from "./components/Homepage";
-// import Campsites from "./components/Campsites";
+import Campsites from "./components/Campsites";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Route exact path="/" component={Homepage}/>
-        {/* <Route path="/campsites" component={Campsites}/> */}
+        <Route path="/campsites" component={Campsites}/>
       </div>
     </Router>
   );
