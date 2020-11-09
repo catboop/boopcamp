@@ -3,9 +3,10 @@ import { hot } from "react-hot-loader";
 
 function Homepage() {
   return (
-   <div className="App">
-       <h1>Welcome to BoopWorld!</h1>
-   </div>
+   <main className="welcome">
+       <div className="welcome-text-container"><h1 className="welcome-text">Welcome to BoopCamp!</h1></div>
+       <div><button className="view-button">View campsites</button></div>
+   </main>
   );
 }
 
