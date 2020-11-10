@@ -4,4 +4,6 @@ dist
 
 .DS_Store
 
-*.log
+yarn-error.log
+
+.env
