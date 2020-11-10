@@ -12,7 +12,11 @@
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server",
     "start:client": "webpack-dev-server --hot --mode development",
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "makeMigration": "knex migrate:make",
+    "migrate": "knex migrate:latest",
+    "seeder": "knex seed:make",
+    "seed": "knex seed:run"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -30,6 +34,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.12",
     "pg": "^8.4.2",
