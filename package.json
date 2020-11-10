@@ -7,8 +7,11 @@
   "author": "Cat Nuguid <catnuguid@gmail.com>",
   "license": "MIT",
   "private": false,
+  "proxy": "http://localhost:4000",
   "scripts": {
-    "start": "webpack-dev-server --hot --mode development",
+    "start": "node ./server/server.js",
+    "dev": "nodemon ./server/server",
+    "start:client": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode development"
   },
   "devDependencies": {
@@ -19,12 +22,17 @@
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^6.2.0",
+    "nodemon": "^2.0.6",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.12",
+    "pg": "^8.4.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
