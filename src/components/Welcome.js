@@ -14,7 +14,7 @@ function Welcome() {
       <div className="welcome-button-container">
         <Link to="/signin">
           <button className="signin-button welcome-button" alt="sign in">
-            <span>Sign in</span>
+            <span>Log in</span>
           </button>
         </Link>
         <Link to="/signup">
