@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { hot } from "react-hot-loader";
 
 function Homepage() {
+  // state determines whether or not inputs for new campsite are rendered
   const [ displayAdd, setDisplayAdd ] = useState(false);
 
   return (
