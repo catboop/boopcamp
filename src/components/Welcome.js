@@ -11,15 +11,15 @@ function Welcome() {
       </div>
 
       {/* when button is clicked, it will redirect to page showing all campsites */}
-      <div>
+      <div className="welcome-button-container">
         <Link to="/signin">
-          <button className="signin-button" alt="sign in">
-            Sign in
+          <button className="signin-button welcome-button" alt="sign in">
+            <span>Sign in</span>
           </button>
         </Link>
         <Link to="/signup">
-          <button className="signup-button" alt="sign up">
-            Sign up
+          <button className="signup-button welcome-button" alt="sign up">
+            <span>Sign up</span>
           </button>
         </Link>
       </div>
