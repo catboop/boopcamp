@@ -51,9 +51,11 @@ table {
   font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
-  font-size: 70px;
+  font-size: 100px;
   font-weight: 700;
+  letter-spacing: 5px;
   color: rgb(242, 242, 242);
+  font-family: 'Loved by the King', cursive;
 }
 .welcome {
   background-color: lavender;

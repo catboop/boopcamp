@@ -16,6 +16,7 @@ exports.up = function (knex) {
             table.string("name").notNullable();
             table.string("address");
             table.string('url_to_image');
+            table.string('website');
             table.text('description');
             table.integer("user_id").unsigned().notNullable();
             table
