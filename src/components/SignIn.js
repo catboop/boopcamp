@@ -14,7 +14,9 @@ function SignIn() {
   return (
     <div className="welcome login-container">
         <div className="login-window">
+
           <h2 className="login-header">Please log in:</h2>
+
           <div className="login-input-container">
             <label for="username">Username*</label>
             <input className="login-input" type="text" name="username" required/>
@@ -28,7 +30,9 @@ function SignIn() {
           <div className="login-input-container">
             <button className="login-button" onClick={loginHandler}>Submit</button>
           </div>
+
         </div>
+        
         {signedIn && <Redirect to="/home"/>}
     </div>
   );

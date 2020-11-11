@@ -10,7 +10,9 @@ function SignUp() {
   return (
     <div className="welcome login-container">
         <div className="login-window">
+
           <h2 className="login-header">Please sign up:</h2>
+
           <div className="login-input-container">
             <label for="username">Username*</label>
             <input className="login-input" type="text" name="username" required/>
@@ -24,6 +26,7 @@ function SignUp() {
           <div className="login-input-container">
             <button className="login-button">Submit</button>
           </div>
+          
         </div>
     </div>
   );
