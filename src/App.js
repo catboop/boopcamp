@@ -4,15 +4,19 @@ import { hot } from "react-hot-loader";
 import "./App.css";
 
 //components
+import Welcome from "./components/Welcome";
 import Homepage from "./components/Homepage";
-import Campsites from "./components/Campsites";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Route exact path="/" component={Homepage}/>
-        <Route path="/campsites" component={Campsites}/>
+        <Route exact path="/" component={Welcome}/>
+        <Route path="/home" component={Homepage}/>
+        <Route path="/signin" component={SignIn}/>
+        <Route path="/signup" component={SignUp}/>
       </div>
     </Router>
   );

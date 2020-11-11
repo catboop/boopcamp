@@ -1,12 +1,12 @@
 import React from "react";
 import { hot } from "react-hot-loader";
 
-function Campsites() {
+function SignUp() {
   return (
     <div>
-      <h2>camp #1</h2>
+        Sign up
     </div>
   );
 }
 
-export default hot(module)(Campsites);
+export default hot(module)(SignUp);
