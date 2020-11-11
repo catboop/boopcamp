@@ -14,7 +14,7 @@
     "start:client": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode development",
     "makeMigration": "knex migrate:make",
-    "migrate": "knex migrate:latest",
+    "migrate": "cd server && knex migrate:latest",
     "seeder": "knex seed:make",
     "seed": "knex seed:run"
   },
