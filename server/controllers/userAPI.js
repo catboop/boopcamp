@@ -22,6 +22,7 @@ router.post("/register", async (req, res) => {
     // insert into db
     await db("users").insert({ username, password_digest, token: "token" })
 
+    // send back id, username, and token
     res.status(200).json("token");
     
   } catch (e) {
