@@ -219,7 +219,7 @@ nav {
 }
 .new-input {
 	height: 30px;
-	width: 250px;
+	width: 225px;
 	margin-top: 5px;
 	border: none;
 	border-bottom: solid #000;
@@ -251,4 +251,21 @@ nav {
 .submit-new-buttom:hover {
 	background-color: darkslategrey;
 	color: white;
+}
+
+/* campsite */
+.campsites-container {
+	display: flex;
+	flex-flow: row wrap;
+}
+.site-container {
+	width: 300px;
+	box-shadow: 0 4px 8px lightgrey;
+	border-radius: 4px;
+	margin: 30px;
+	padding-bottom: 30px;
+}
+.site-img {
+	width: 300px;
+	object-fit: cover;
 }
