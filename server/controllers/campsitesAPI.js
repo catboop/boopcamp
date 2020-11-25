@@ -6,8 +6,9 @@ const db = require("../knex.js");
 router.get("/", async (_, res) => {
   try {
     const campsites = await db.select("*").table("campsites");
-    console.log("campsites: ", campsites);
+    
     res.send(campsites);
+
   } catch (err) {
     //If error occur, send 500 status code
     console.log(err)
@@ -18,13 +19,24 @@ router.get("/", async (_, res) => {
 // add new campsite
 router.post("/", async (req, res) => {
   try {
-    const campsites = await db("campsites").insert({...req.body})
+    const { name } = req.body
+    const existingSite = await db("campsites").select("*").where({ name })
+    
+    // if site already exists, send conflict status code
+    if (existingSite.length > 0) {
+      res.sendStatus(409);
 
-    // TODO:send back all campsites?
+    } else {
+      await db("campsites").insert({...req.body});
+  
+      const campsites = await db("campsites").select("*");
+  
+      res.status(200).json(campsites);
+    }
   } catch (err) {
     //If error occur, send 500 status code
-    console.log(err)
-    res.status(500).send("Unable to add campsite. Try again later.");
+    console.log(err);
+    res.status(500);
   }
 });
 
