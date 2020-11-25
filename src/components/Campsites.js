@@ -1,36 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader";
+import axios from "axios";
 
 import Site from "./Site";
 
 function Campsites() {
-  // sample data
-  const [sites, setSites] = useState([
-    {
-      name: "Test",
-      address: "address address address",
-      url_to_image:
-        "https://images.unsplash.com/photo-1488790881751-9068aa742b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
-    },
-    {
-      name: "Test",
-      address: "address address address",
-      url_to_image:
-        "https://images.unsplash.com/photo-1488790881751-9068aa742b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
-    },
-    {
-      name: "Test",
-      address: "address address address",
-      url_to_image:
-        "https://images.unsplash.com/photo-1488790881751-9068aa742b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
-    },
-    {
-      name: "Test",
-      address: "address address address",
-      url_to_image:
-        "https://images.unsplash.com/photo-1488790881751-9068aa742b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
-    },
-  ]);
+  const [sites, setSites] = useState([]);
+
+  useEffect(() => {
+    async function fetchSites() {
+      try {
+        console.log("fetching campsites")
+        const campsites = await axios.get("/api/campsites");
+        console.log("campsites: ", campsites)
+        setSites(campsites.data);
+      } catch (err) {
+        console.log('ERROR FETCHING CAMPSITES: ', err);
+      }
+    };
+    fetchSites();
+  }, [])
 
   return (
     <div className="campsites-container">

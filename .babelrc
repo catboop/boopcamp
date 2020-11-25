@@ -1,4 +1,5 @@
 // this config tells babel that we’re going to use the env and react presets
 {
-    "presets": ["@babel/env", "@babel/preset-react"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["@babel/plugin-transform-runtime"]
 }

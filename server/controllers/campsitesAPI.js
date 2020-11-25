@@ -7,12 +7,12 @@ router.get("/", async (_, res) => {
   try {
     const campsites = await db.select("*").table("campsites");
     
-    res.send(campsites);
+    res.status(200).json(campsites);
 
   } catch (err) {
     //If error occur, send 500 status code
     console.log(err)
-    res.sendStatus(500);
+    res.sendStatus(500).send(err);
   }
 });
 
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
   } catch (err) {
     //If error occur, send 500 status code
     console.log(err);
-    res.status(500);
+    res.status(500).send(err);
   }
 });
 
