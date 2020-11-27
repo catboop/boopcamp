@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { hot } from "react-hot-loader";
+import axios from "axios";
 
 function Add( {setDisplayAdd} ) {
-  const [ inputs, setInputs ] = useState({});
+  // TODO : update initial state later when user info is saved to state at login
+  const [ inputs, setInputs ] = useState({user_id: 1});
+
+  async function addNewSite() {
+    await axios.post("/campsites", inputs);
+
+    // TODO : add to campsites state
+  };
 
   return (
     <div className="add-container">
@@ -64,7 +72,7 @@ function Add( {setDisplayAdd} ) {
       </div>
 
       <div className="new-input-container new-submit">
-        <button className="submit-new-buttom">Submit</button>
+        <button className="submit-new-buttom" onClick={addNewSite}>Submit</button>
         <button className="cancel-button" onClick={() => setDisplayAdd(false)}>
           Cancel
         </button>
