@@ -7,9 +7,12 @@ function Add( {setDisplayAdd} ) {
   const [ inputs, setInputs ] = useState({user_id: 1});
 
   async function addNewSite() {
-    await axios.post("/campsites", inputs);
-
+    console.log("posting")
+    await axios.post("/api/campsites", inputs);
+    console.log("posted")
+    setInputs({user_id: 1})
     // TODO : add to campsites state
+  
   };
 
   return (
@@ -22,6 +25,7 @@ function Add( {setDisplayAdd} ) {
           className="new-input"
           name="name"
           placeholder="Konashidaira"
+          value={inputs.name || ""}
           onInput={e => setInputs({...inputs, name: e.target.value})}
           required
         />
@@ -33,6 +37,7 @@ function Add( {setDisplayAdd} ) {
           type="text"
           className="new-input"
           name="address"
+          value={inputs.address || ""}
           placeholder="Kamikochi, Nagano, Japan 390-1516"
           onInput={e => setInputs({...inputs, address: e.target.value})}
         />
@@ -44,6 +49,7 @@ function Add( {setDisplayAdd} ) {
           type="text"
           className="new-input"
           name="image"
+          value={inputs.url_to_image || ""}
           placeholder="www.image-url.com"
           onInput={e => setInputs({...inputs, url_to_image: e.target.value})}
         />
@@ -55,6 +61,7 @@ function Add( {setDisplayAdd} ) {
           type="text"
           className="new-input"
           name="website"
+          value={inputs.website || ""}
           placeholder="www.nihonalpskankou.com"
           onInput={e => setInputs({...inputs, website: e.target.value})}
         />
@@ -66,6 +73,7 @@ function Add( {setDisplayAdd} ) {
           type="text"
           className="new-input"
           name="description"
+          value={inputs.description || ""}
           placeholder="Great for mountain-lovers!"
           onInput={e => setInputs({...inputs, description: e.target.value})}
         />
